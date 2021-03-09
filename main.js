@@ -123,8 +123,7 @@ NOTE: you can assume each input will be the same length
 
 
 const interleave = (arr1, arr2) => arr1.reduce((acc, curVal, index) => {
-    acc.push(curVal);
-    acc.push(arr2[index]);
+    acc.push(curVal, arr2[index]);
     return acc;
 }, [])
 
@@ -156,7 +155,6 @@ function createRange(number, defVal) {
 
 
 
-
 /*
 ----------------------------------------
 CHALLENGE
@@ -170,7 +168,11 @@ If you pass it ["quick", "brown", "fox"] then it should return { "quick": 0, "br
 */
 
 
-
+function flipArray(array) {
+    obj = {};
+    array.forEach((val, index) => obj[val] = index);
+    return obj;
+}
 
 
 
