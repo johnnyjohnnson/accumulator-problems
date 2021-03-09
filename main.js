@@ -31,7 +31,9 @@ results on the index page in the browser.
 */
 
 
-
+function sum(arr)  {
+    return arr.length > 0 ? arr.reduce((acc,curr) => acc + curr) : 0 ;
+}
 
 
 
@@ -49,9 +51,19 @@ Example: if you pass it "abc" then it should return "aabbcc"
 */
 
 
+// function doubleLetters(str) {
+//     let doubleStr = "";
+//     for (let i = 0; i < str.length; i++) {
+//         doubleStr += str[i] + str[i];
+//     }
+//     return doubleStr;
+// }
 
-
-
+const doubleLetters = (str) => {
+    return str.split("").reduce((acc, curVal) => {
+        return acc += curVal + curVal;;
+    }, "");
+}
 
 
 
@@ -68,9 +80,7 @@ Example: if you pass it [1,2,3] then it should return [2,4,6]
 */
 
 
-
-
-
+const doubleNumbers = (array) => array.map((num) => num * 2)
 
 
 
@@ -90,7 +100,7 @@ Examples:
 */
 
 
-
+const multiplyNumbers = (array, fac) => array.map((elem) => elem * fac)
 
 
 
@@ -112,7 +122,11 @@ NOTE: you can assume each input will be the same length
 
 
 
-
+const interleave = (arr1, arr2) => arr1.reduce((acc, curVal, index) => {
+    acc.push(curVal);
+    acc.push(arr2[index]);
+    return acc;
+}, [])
 
 
 
@@ -132,7 +146,13 @@ Example: if you pass it 4 and "Hello" then it should return ["Hello", "Hello", "
 
 
 
-
+function createRange(number, defVal) {
+    let arr = [];
+    for (let i = 0; i < number; i++) {
+        arr.push(defVal);
+    }
+    return arr;
+}
 
 
 
